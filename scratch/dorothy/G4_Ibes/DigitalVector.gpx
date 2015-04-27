@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 1.11.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="37.270605736431811" minlon="-76.712687909603119" maxlat="37.271041164957168" maxlon="-76.711864471435547"/></metadata>                
+<rte>
+  <rtept lat="37.271041164957168" lon="-76.7124143242836">
+  </rtept>
+  <rtept lat="37.271039030509748" lon="-76.712476015090942">
+  </rtept>
+  <rtept lat="37.271026223824009" lon="-76.712521612644196">
+  </rtept>
+  <rtept lat="37.271009148239614" lon="-76.712564527988434">
+  </rtept>
+  <rtept lat="37.270985669304729" lon="-76.712599396705613">
+  </rtept>
+  <rtept lat="37.270951518113698" lon="-76.712642312049866">
+  </rtept>
+  <rtept lat="37.270913098005224" lon="-76.71267181634903">
+  </rtept>
+  <rtept lat="37.270868274520588" lon="-76.712687909603119">
+  </rtept>
+  <rtept lat="37.270819182102024" lon="-76.712687909603119">
+  </rtept>
+  <rtept lat="37.270761551830695" lon="-76.712682545185089">
+  </rtept>
+  <rtept lat="37.270733803906538" lon="-76.712669134140015">
+  </rtept>
+  <rtept lat="37.270697518144139" lon="-76.712639629840837">
+  </rtept>
+  <rtept lat="37.270667635738469" lon="-76.712607443332672">
+  </rtept>
+  <rtept lat="37.270637753320912" lon="-76.712556481361389">
+  </rtept>
+  <rtept lat="37.270618543189073" lon="-76.712508201599121">
+  </rtept>
+  <rtept lat="37.270605736431811" lon="-76.712441146373749">
+  </rtept>
+  <rtept lat="37.270607870891496" lon="-76.712398231029496">
+  </rtept>
+  <rtept lat="37.27103689606227" lon="-76.71240359544754">
+  </rtept>
+  <rtept lat="37.270825585462795" lon="-76.712400913238525">
+  </rtept>
+  <rtept lat="37.270840526635773" lon="-76.711864471435547">
+  </rtept>
+  <rtept lat="37.270701787058279" lon="-76.712186336517334">
+  </rtept>
+  <rtept lat="37.270831988822998" lon="-76.712194383144379">
+  </rtept>
+</rte>
+</gpx>

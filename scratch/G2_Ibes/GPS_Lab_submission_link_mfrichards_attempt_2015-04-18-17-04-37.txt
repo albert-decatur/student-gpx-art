@@ -1,0 +1,29 @@
+Name: Marshall Richards (mfrichards)
+Assignment: GPS Lab submission link
+Date Submitted: Saturday, April 18, 2015 5:04:37 PM EDT
+Current Grade: Needs Grading
+
+Submission Field:
+There is no student submission text data for this assignment.
+
+Comments:
+https://gist.github.com/anonymous/8adf0d82298383d94be3
+
+Note, the vector we were following was drawn in two parts in two files.
+
+Files:
+	Original filename: Plan_part2.gpx
+	Filename: GPS Lab submission link_mfrichards_attempt_2015-04-18-17-04-37_Plan_part2.gpx
+
+	Original filename: Track.gpx
+	Filename: GPS Lab submission link_mfrichards_attempt_2015-04-18-17-04-37_Track.gpx
+
+	Original filename: Plan_part1.gpx
+	Filename: GPS Lab submission link_mfrichards_attempt_2015-04-18-17-04-37_Plan_part1.gpx
+
+	Original filename: image2.JPG
+	Filename: GPS Lab submission link_mfrichards_attempt_2015-04-18-17-04-37_image2.JPG
+
+	Original filename: image1.JPG
+	Filename: GPS Lab submission link_mfrichards_attempt_2015-04-18-17-04-37_image1.JPG
+

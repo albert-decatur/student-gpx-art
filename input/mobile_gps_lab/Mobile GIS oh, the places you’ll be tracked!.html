@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)http://bl.ocks.org/anonymous/raw/a545fcf207e6ff114c8a/#0 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Mobile GIS
+oh, the places you’ll be tracked!
+</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<style type="text/css">
+body {
+  font-family: 'Helvetica';
+  letter-spacing:-5px;
+  background:#000;
+  background-size:100%;
+  color:#fff;
+  margin:0;
+  padding:0;
+  font-weight:bold;
+}
+
+h1, h2, h3, p {
+  margin:0;
+}
+
+em, a {
+  font-style:normal;
+  color:#8dbd0c;
+}
+
+a {
+  background: #34d0e7;
+  color:#000;
+  text-decoration:none;
+}
+
+img {
+  width:100%;
+}
+
+div {
+  cursor:pointer;
+  cursor:hand;
+  position:absolute;
+  top:0;
+  left:0;
+}
+
+</style>
+<script type="text/javascript">
+window.onload = function() {
+    var s = document.getElementsByTagName('div'), cur = 0, ti;
+    if (!s) return;
+    function go(n) {
+        cur = n;
+        var i = 1e3, e = s[n], t;
+        document.body.className = e.dataset.bodyclass || '';
+        for (var k = 0; k < s.length; k++) s[k].style.display = 'none';
+        e.style.display = 'inline';
+        e.style.fontSize = i + 'px';
+        if (e.firstChild && e.firstChild.nodeName === 'IMG') {
+            document.body.style.backgroundImage = 'url(' + e.firstChild.src + ')';
+            e.firstChild.style.display = 'none';
+            if ('classList' in e) e.classList.add('imageText');
+        } else {
+            document.body.style.backgroundImage = '';
+            document.body.style.backgroundColor = e.style.backgroundColor;
+        }
+        if (ti !== undefined) window.clearInterval(ti);
+        t = parseInt(e.dataset.timeToNext || 0, 10);
+        if (t > 0) ti = window.setTimeout(fwd, (t * 1000));
+        while (
+            e.offsetWidth > window.innerWidth ||
+            e.offsetHeight > window.innerHeight) {
+            e.style.fontSize = (i -= 2) + 'px';
+            if (i < 0) break;
+        }
+        e.style.marginTop = ((window.innerHeight - e.offsetHeight) / 2) + 'px';
+        if (window.location.hash !== n) window.location.hash = n;
+        document.title = e.textContent || e.innerText;
+    }
+    document.onclick = function() { go(++cur % (s.length)); };
+    function fwd() { go(Math.min(s.length - 1, ++cur)); }
+    function rev() { go(Math.max(0, --cur)); }
+    document.onkeydown = function(e) {
+        if (e.which === 39 || e.which === 34 || e.which === 40) fwd();
+        if (e.which === 37 || e.which === 33 || e.which === 38) rev();
+    };
+    document.ontouchstart = function(e) {
+        var x0 = e.changedTouches[0].pageX;
+        document.ontouchend = function(e) {
+            var x1 = e.changedTouches[0].pageX;
+            if (x1 - x0 < 0) fwd();
+            if (x1 - x0 > 0) rev();
+        };
+    };
+    function parse_hash() {
+        return Math.max(Math.min(
+            s.length - 1,
+            parseInt(window.location.hash.substring(1), 10)), 0);
+    }
+    if (window.location.hash) cur = parse_hash() || cur;
+    window.onhashchange = function() {
+        var c = parse_hash();
+        if (c !== cur) go(c);
+    };
+    go(cur);
+};
+</script></head><body class="">
+<div style="display: inline; font-size: 164px; margin-top: 35px;"><h1 id="mobile-gis">Mobile GIS</h1>
+<h3 id="oh-the-places-you-ll-be-tracked-">oh, the places you’ll be tracked!</h3>
+</div>
+<div style="display: none;"><h1 id="what-does-mobile-gis-look-like-">what does mobile GIS look like?</h1>
+</div>
+<div style="display: none;"><p>at this point it’s basically tracking through phone GPS</p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/Screenshot-03272015-03_04_19_PM.png" alt="abidjan_mobile"></p>
+</div>
+<div style="display: none;"><p>that’s millions of mobile phone users being tracked in Abidjan, Ivory Coast</p>
+</div>
+<div style="display: none;"><p>or tracking <a href="https://www.movebank.org/">animals</a></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/land-crab.jpg" alt="crab_gps"></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/Screenshot-03272015-03_01_04_PM.png" alt="movebank"></p>
+</div>
+<div style="display: none;"><p>that one’s a bird!</p>
+</div>
+<div style="display: none;"><p>or tracking <a href="http://nyctaxi.herokuapp.com/">vehicles</a></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/Screenshot-03272015-03_01_56_PM.png" alt="nyc_taxi"></p>
+</div>
+<div style="display: none;"><p>that’s one of 170 million Manhattan taxi trips in 2013</p>
+</div>
+<div style="display: none;"><p>oh, and Uber . . . </p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/Screenshot-03272015-03_02_27_PM.png" alt="uber"></p>
+</div>
+<div style="display: none;"><p>and google!</p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/Screenshot+-+03302015+-+11-45-29+AM.png" alt="location_history"></p>
+</div>
+<div style="display: none;"><h1 id="track-yourself">track yourself</h1>
+</div>
+<div style="display: none;"><p>it’s fun - and can help people!</p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/Screenshot-03272015-03_06_00_PM.png" alt="OSM"></p>
+</div>
+<div style="display: none;"><p><a href="http://www.openstreetmap.org/#map=5/51.500/-0.100">OpenStreetMap</a></p>
+</div>
+<div style="display: none;"><p>OpenStreetMap (OSM) is a community of 2m volunteers adding data to an open global vector map</p>
+</div>
+<div style="display: none;"><p>sometimes the aims are humanitarian</p>
+</div>
+<div style="display: none;"><p>the humanitarian OSM team, <a href="http://tasks.hotosm.org/project/944">HOT OSM</a>, has recently been mapping Vanuatu due to the major storm that hit there</p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/Screenshot-03272015-03_02_21_PM.png" alt="hotosm"></p>
+</div>
+<div style="display: none;"><p>one way that users contribute to OSM is through tracking their own movements with GPS</p>
+</div>
+<div style="display: none;"><p>and exporting the <a href="https://www.openstreetmap.org/traces">GPX</a> file</p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/yo.png" alt="osm_gpx"></p>
+</div>
+<div style="display: none;"><p>that’s what we’ll do today</p>
+</div>
+<div style="display: none;"><p>this is <a href="https://github.com/blog/1772-diffable-more-customizable-maps">geoJSON</a> - it’s a cool vector format</p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/Screenshot-03272015-03_01_13_PM.png" alt="geodiff"></p>
+</div>
+<div style="display: none;"><p>that was being presented on <a href="http://github.com/">github</a> where you’ll need to make an account for this lab</p>
+</div>
+<div style="display: none;"><h1 id="finally-">finally!</h1>
+</div>
+<div style="display: none;"><p>generic steps for this lab:</p>
+<ul>
+<li>digitize a line</li>
+<li>look at it in your phone</li>
+<li>start GPS logging</li>
+<li>walk that line</li>
+<li>stop GPS logging</li>
+<li>upload both digitized line and logged GPX to geojson.io</li>
+<li>save as a GitHub gist and share publically</li>
+</ul>
+</div>
+<div style="display: none;"><h1 id="this-lab">this lab</h1>
+<h3 id="for-android-users-">for android users . . .</h3>
+</div>
+<div style="display: none;"><p>here’s our android GPS logging / GPX displaying app</p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/Screenshot-03272015-02_52_42_PM.png" alt="geopaparazzi"></p>
+</div>
+<div style="display: none;"><p>here’s what all this looked like for me . . .</p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/Screenshot-03192015-03_44_34_PM.png" alt="a"></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/Screenshot-03272015-01_44_17_PM.png" alt="b"></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/Screenshot-03272015-01_44_31_PM.png" alt="c"></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/Screenshot-03272015-01_45_19_PM.png" alt="d"></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/Screenshot-03272015-01_45_25_PM.png" alt="e"></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/Screenshot-03272015-01_45_25_PM.png" alt="f"></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/Screenshot-03272015-01_46_01_PM.png" alt="g"></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/Screenshot-03272015-02_07_08_PM.png" alt="h"></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/Screenshot-03272015-02_07_28_PM.png" alt="i"></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/import_gpx.png" alt="j"></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/Screenshot_2015-03-27-14-08-27.png" alt="k"></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/Screenshot_2015-03-27-14-08-37.png" alt="l"></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/Screenshot_2015-03-27-14-08-42.png" alt="m"></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/start_logging.png" alt="yo"></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/Screenshot_2015-03-27-14-09-14.png" alt="o"></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/Screenshot_2015-03-27-14-16-38.png" alt="p"></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/Screenshot_2015-03-27-14-21-12.png" alt="q"></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/Screenshot_2015-03-27-14-21-18.png" alt="r"></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/Screenshot_2015-03-27-14-35-22.png" alt="s"></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/Screenshot_2015-03-27-14-35-41.png" alt="t"></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/Screenshot_2015-03-27-14-36-02.png" alt="u"></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/Screenshot-03272015-02_41_15_PM.png" alt="v"></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/Screenshot-03272015-02_41_46_PM.png" alt="w"></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/Screenshot-03272015-02_43_34_PM.png" alt="x"></p>
+</div>
+<div style="display: none;"><p><em>get creative</em></p>
+</div>
+<div style="display: none;"><p>GPX art</p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/la-guerre_gps_2.jpg" alt="art1"></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/runner-gps-art.png" alt="art2"></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/dbc546f9568ad5772aa78384452a1a5c5a423c458043aed554d6f2cc5c02741f_large.jpg" alt="art3"></p>
+</div>
+<div style="display: none;"><p>but please don’t make it obscene</p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/gpsridewinner.jpg" alt="art4"></p>
+</div>
+<div style="display: none;"><h1 id="this-lab">this lab</h1>
+<h3 id="for-ios-users-">for iOS users . . .</h3>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/1.png" alt=""></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/2.png" alt=""></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/3.png" alt=""></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/4.png" alt=""></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/5.png" alt=""></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/6.png" alt=""></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/7.png" alt=""></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/8.png" alt=""></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/9.png" alt=""></p>
+</div>
+<div style="display: none;"><p><img src="./Mobile GIS oh, the places you’ll be tracked!_files/10.png" alt=""></p>
+</div>
+</body></html>
